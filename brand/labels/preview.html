@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Digital Shore — vista previa de etiqueta</title>
+  <style>
+    :root {
+      --deep: #0A4D68;
+      --ocean: #088395;
+      --tide: #05BFDB;
+      --foam: #E8F7FC;
+      --ink: #0B1F2A;
+      --sand: #F4F1EA;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #05bfdb33, transparent),
+        radial-gradient(900px 500px at 100% 0%, #0a4d6844, transparent),
+        linear-gradient(180deg, var(--foam), var(--sand));
+      min-height: 100vh;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+    main {
+      max-width: 840px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px #0b1f2a14;
+      padding: 2rem;
+      border: 1px solid #0a4d6812;
+    }
+    h1 { margin: 0 0 0.25rem; font-size: 1.75rem; }
+    .sub { color: var(--ocean); font-weight: 600; margin-bottom: 1.5rem; }
+    .grid {
+      display: grid;
+      gap: 1.25rem;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 720px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+    figure {
+      margin: 0;
+      padding: 1.25rem;
+      border-radius: 14px;
+      background: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 140px;
+    }
+    figure.light { background: var(--foam); border: 1px dashed #08839555; }
+    figcaption {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #59636e;
+    }
+    .swatches { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+    .swatch {
+      width: 112px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #00000010;
+      font-size: 0.75rem;
+    }
+    .swatch i {
+      display: block;
+      height: 48px;
+    }
+    .swatch span {
+      display: block;
+      padding: 0.4rem 0.55rem 0.55rem;
+      background: #fff;
+    }
+    code {
+      background: var(--foam);
+      padding: 0.15rem 0.4rem;
+      border-radius: 6px;
+      font-size: 0.9em;
+    }
+    a { color: var(--ocean); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Digital Shore</h1>
+    <p class="sub">Etiqueta de marca · digital-shore.com</p>
+    <p>
+      Vista previa visual de la etiqueta del ecosistema.
+      Definición GitHub: <code>digital-shore.com</code> · color <code>#0A4D68</code>.
+    </p>
+
+    <div class="grid">
+      <div>
+        <figure class="light">
+          <img src="./digital-shore.svg" alt="Badge digital-shore.com" width="168" height="28" />
+        </figure>
+        <figcaption>Badge compacto (issues, README, PRs)</figcaption>
+      </div>
+      <div>
+        <figure>
+          <img src="./digital-shore-lockup.svg" alt="Lockup Digital Shore" style="max-width:100%;height:auto" />
+        </figure>
+        <figcaption>Lockup horizontal para sitios y presentaciones</figcaption>
+      </div>
+    </div>
+
+    <div class="swatches" aria-label="Paleta">
+      <div class="swatch"><i style="background:#0A4D68"></i><span>Deep<br>#0A4D68</span></div>
+      <div class="swatch"><i style="background:#088395"></i><span>Ocean<br>#088395</span></div>
+      <div class="swatch"><i style="background:#05BFDB"></i><span>Tide<br>#05BFDB</span></div>
+      <div class="swatch"><i style="background:#E8F7FC"></i><span>Foam<br>#E8F7FC</span></div>
+      <div class="swatch"><i style="background:#0B1F2A"></i><span>Ink<br>#0B1F2A</span></div>
+      <div class="swatch"><i style="background:#F4F1EA"></i><span>Sand<br>#F4F1EA</span></div>
+    </div>
+
+    <p style="margin-top:1.75rem">
+      Guía completa: <a href="../BRAND.md">brand/BRAND.md</a> ·
+      Aplicar a repos: <code>./scripts/apply-digital-shore-label.sh</code>
+    </p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,16 @@
+# Repositorios objetivo para la etiqueta digital-shore.com
+# Formato: owner/repo  (una por línea; líneas vacías y # se ignoran)
+#
+# Ajusta esta lista a tus 10 repositorios reales del ecosistema Digital Shore.
+# Los que no existan o sin permiso se reportarán y se omitirán.
+
+tvoyagetrends-max/venta-express-
+tvoyagetrends-max/codespaces-preact
+# tvoyagetrends-max/repo-03
+# tvoyagetrends-max/repo-04
+# tvoyagetrends-max/repo-05
+# tvoyagetrends-max/repo-06
+# tvoyagetrends-max/repo-07
+# tvoyagetrends-max/repo-08
+# tvoyagetrends-max/repo-09
+# tvoyagetrends-max/repo-10

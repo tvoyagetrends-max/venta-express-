@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="120" viewBox="0 0 480 120" role="img" aria-label="Digital Shore">
+  <title>Digital Shore — digital-shore.com</title>
+  <rect width="480" height="120" rx="16" fill="#0B1F2A"/>
+  <defs>
+    <linearGradient id="ocean" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#0A4D68"/>
+      <stop offset="50%" stop-color="#088395"/>
+      <stop offset="100%" stop-color="#05BFDB"/>
+    </linearGradient>
+  </defs>
+  <!-- Icon disc -->
+  <circle cx="64" cy="60" r="36" fill="url(#ocean)"/>
+  <path d="M40 68c6-10 12-10 18 0s12 10 18 0 12-10 18 0" fill="none" stroke="#E8F7FC" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="64" cy="46" r="6" fill="#E8F7FC"/>
+  <!-- Wordmark -->
+  <text x="118" y="58" font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif" font-size="32" font-weight="700" fill="#FFFFFF">Digital Shore</text>
+  <text x="118" y="86" font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif" font-size="16" font-weight="500" fill="#05BFDB" letter-spacing="1.5">digital-shore.com</text>
+</svg>

@@ -1,0 +1,51 @@
+# Etiquetas del ecosistema Digital Shore
+# Fuente de verdad para scripts/apply-digital-shore-label.sh
+#
+# Uso:
+#   ./scripts/apply-digital-shore-label.sh
+#   ./scripts/apply-digital-shore-label.sh --dry-run
+
+labels:
+  - name: digital-shore.com
+    color: "0A4D68"
+    description: "Ecosistema Digital Shore — digital-shore.com"
+
+  - name: bug
+    color: "d73a4a"
+    description: "Algo no funciona"
+
+  - name: documentation
+    color: "0075ca"
+    description: "Mejoras o adiciones a la documentación"
+
+  - name: duplicate
+    color: "cfd3d7"
+    description: "Issue o PR duplicado"
+
+  - name: enhancement
+    color: "a2eeef"
+    description: "Nueva funcionalidad o solicitud"
+
+  - name: good first issue
+    color: "7057ff"
+    description: "Bueno para quienes empiezan"
+
+  - name: help wanted
+    color: "008672"
+    description: "Se necesita ayuda extra"
+
+  - name: invalid
+    color: "e4e669"
+    description: "Esto no parece correcto"
+
+  - name: question
+    color: "d876e3"
+    description: "Se solicita más información"
+
+  - name: wontfix
+    color: "ffffff"
+    description: "No se trabajará en esto"
+
+  - name: accessibility
+    color: "f143ab"
+    description: "Barrera que afecta a personas con discapacidad"
