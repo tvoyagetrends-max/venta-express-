@@ -1,0 +1,78 @@
+# Plantilla DNS — digital-shore.com → Whop (vía Cloudflare)
+# ------------------------------------------------------------
+# 1. Copia los valores EXACTOS desde Whop → Settings → Domains
+# 2. Aplícalos en Cloudflare → DNS → Records
+# 3. CNAME hacia Whop: Proxy = DNS only (nube gris)
+#
+# Este archivo es documentación. No se aplica solo:
+# no hay tokens de Cloudflare en el repo (y no deben añadirse).
+
+zone: digital-shore.com
+provider: cloudflare
+destination: whop
+
+# URL canónica recomendada (elige una y redirige la otra)
+canonical_host: www.digital-shore.com
+
+records:
+  # --- Verificación de propiedad (si Whop la muestra) ---
+  - type: TXT
+    name: _whop          # o el host exacto que indique Whop
+    content: "whop-domain-verification=REEMPLAZAR_CON_VALOR_DE_WHOP"
+    ttl: auto
+    notes: "Borrar o dejar si Whop ya verificó y lo permite"
+
+  # --- Tráfico web: www → Whop ---
+  - type: CNAME
+    name: www
+    target: domains.whop.com   # REEMPLAZAR si Whop muestra otro target
+    ttl: auto
+    proxied: false             # OBLIGATORIO: DNS only (gris)
+    notes: "Host principal recomendado"
+
+  # --- Tráfico web: apex (raíz) → Whop (CNAME flattening en Cloudflare) ---
+  - type: CNAME
+    name: "@"
+    target: domains.whop.com   # REEMPLAZAR si Whop muestra otro target
+    ttl: auto
+    proxied: false
+    notes: >
+      Quitar A/AAAA previos en @. Si prefieres solo www,
+      omite este registro y usa un Redirect Rule 301 de @ → www.
+
+  # --- Ejemplo subdominio de store/pay (opcional) ---
+  # - type: CNAME
+  #   name: store
+  #   target: domains.whop.com
+  #   ttl: auto
+  #   proxied: false
+
+# Registros que NO debes borrar al azar (ejemplos — conserva los tuyos reales)
+preserve_if_present:
+  - type: MX
+    reason: Correo (Google Workspace, Microsoft 365, etc.)
+  - type: TXT
+    name: "@"
+    reason: SPF / verificación de email (si aplica)
+  - type: TXT
+    name: _dmarc
+    reason: DMARC
+  - type: CNAME
+    name: "selector._domainkey"
+    reason: DKIM
+
+# Redirect sugerido en Cloudflare (Rules → Redirect Rules)
+redirects:
+  - from: "https://digital-shore.com/*"
+    to: "https://www.digital-shore.com/${1}"
+    status: 301
+    enabled_when: "canonical_host es www y apex también resuelve o solo quieres una canónica"
+
+checklist:
+  - "Pegar valores reales de Whop en content/target"
+  - "Crear/editar registros en Cloudflare"
+  - "CNAME con proxied: false (nube gris)"
+  - "Eliminar A/CNAME viejos del hosting anterior"
+  - "Verify en Whop"
+  - "Probar https://www.digital-shore.com en ventana privada"
+  - "Confirmar que el correo sigue funcionando"

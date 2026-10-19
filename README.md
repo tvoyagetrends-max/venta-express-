@@ -92,6 +92,9 @@ Este repositorio forma parte del ecosistema **digital-shore.com**.
 | Catálogo de etiquetas GitHub | [`brand/labels/github-labels.yml`](./brand/labels/github-labels.yml) |
 | Repos objetivo | [`brand/labels/repos.txt`](./brand/labels/repos.txt) |
 | Script de aplicación | [`scripts/apply-digital-shore-label.sh`](./scripts/apply-digital-shore-label.sh) |
+| DNS Cloudflare → Whop | [`brand/dns/CLOUDFLARE-WHOP.md`](./brand/dns/CLOUDFLARE-WHOP.md) |
+| Checklist DNS | [`brand/dns/CHECKLIST.md`](./brand/dns/CHECKLIST.md) |
+| Plantilla registros DNS | [`brand/dns/records.example.yml`](./brand/dns/records.example.yml) |
 
 ```bash
 # Vista previa
@@ -102,6 +105,16 @@ Este repositorio forma parte del ecosistema **digital-shore.com**.
 ```
 
 Edita `brand/labels/repos.txt` con tus hasta 10 repositorios (`owner/repo`) y ejecuta el script con `gh` autenticado.
+
+### DNS: digital-shore.com en Whop (Cloudflare)
+
+Para apuntar el dominio a Whop **sin salir de Cloudflare**, sigue la guía paso a paso:
+
+1. Abre [`brand/dns/CHECKLIST.md`](./brand/dns/CHECKLIST.md) y ve marcando
+2. Detalle completo en [`brand/dns/CLOUDFLARE-WHOP.md`](./brand/dns/CLOUDFLARE-WHOP.md)
+3. Regla clave: CNAME hacia Whop con **DNS only** (nube **gris**, no naranja)
+
+> Este agente no puede editar tu cuenta de Cloudflare/Whop. Los cambios DNS los haces tú en el panel (o con tu API token local, nunca en el repo).
 
 ## Contribución
 

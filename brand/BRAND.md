@@ -2,7 +2,8 @@
 
 **Marca:** Digital Shore  
 **Dominio:** [digital-shore.com](https://digital-shore.com)  
-**Etiqueta GitHub:** `digital-shore.com`
+**Etiqueta GitHub:** `digital-shore.com`  
+**DNS / hosting web:** Cloudflare DNS → Whop (ver [dns/CLOUDFLARE-WHOP.md](./dns/CLOUDFLARE-WHOP.md))
 
 ## Propósito
 
@@ -44,6 +45,9 @@ description: "Ecosistema Digital Shore — digital-shore.com"
 | `labels/digital-shore-lockup.svg` | Lockup de marca horizontal |
 | `labels/github-labels.yml` | Catálogo de etiquetas (incluye digital-shore.com) |
 | `labels/repos.txt` | Lista de repositorios objetivo |
+| `dns/CLOUDFLARE-WHOP.md` | Guía: apuntar digital-shore a Whop en Cloudflare |
+| `dns/CHECKLIST.md` | Checklist corto de la migración DNS |
+| `dns/records.example.yml` | Plantilla de registros DNS (rellenar con valores de Whop) |
 
 ## Cómo aplicar la etiqueta
 
